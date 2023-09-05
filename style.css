@@ -34,7 +34,6 @@ body{
     content:'';
     position: absolute;
     top: 0;
-    left: 0;
     right: 0;
     width: 100%;
     height: 100%;
@@ -83,7 +82,6 @@ body{
     content:'';
     position: absolute;
     top: 0;
-    left: 0;
     right: 0;
     width: 100%;
     height: 100%;
@@ -103,7 +101,6 @@ body{
         content:'';
         position: absolute;
         top: 0;
-        left: 0;
         right: 0;
         width: 100%;
         height: 100%;
@@ -121,7 +118,6 @@ body{
     content:'';
     position: absolute;
     top: 0;
-    left: 0;
     right: 0;
     width: 100%;
     height: 100%;
@@ -143,7 +139,6 @@ body{
     content:'';
     position: absolute;
     top: 0;
-    left: 0;
     right: 0;
     width: 100%;
     height: 100%;
@@ -214,7 +209,6 @@ body{
     content:'';
     position: absolute;
     top: 0;
-    left: 0;
     right: 0;
     width: 100%;
     height: 100%;
@@ -222,6 +216,8 @@ body{
     animation: showRight 1s ease forwards;
     animation-delay: 2.5s;
     z-index: 2;
+
+    
 
 }
 .home-sci a{
@@ -267,6 +263,9 @@ body{
     height: 100%;
     background: transparent;
     transition: 3s;
+    animation: manipActiveHover .1s forwards;
+    animation-delay: 4s;
+    pointer-events: none;
 
 }
 .home-imgHover:hover{
@@ -274,11 +273,28 @@ body{
     opacity: .8;
 }
 
-
+.home-imgHover::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background:#081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay:3s;
+    z-index: 2;
+}
 
 
 @keyframes showRight{
     100%{
         width:0;
+    }
+}
+
+@keyframes manipActiveHover{
+    100%{
+        pointer-events: auto;
     }
 }
